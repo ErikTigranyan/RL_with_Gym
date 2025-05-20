@@ -118,9 +118,9 @@ if __name__ == "__main__":
     vec_env = SubprocVecEnv(env_fns)
     vec_env = VecNormalize(vec_env, norm_obs=True, norm_reward=True)
 
-    # === Load your pretrained model and normalization stats ===
-    model_path = "./upd_humanoid_runner_sac_subproc.zip"
-    normalize_path = "./upd_humanoid_runner_vecnormalize_subproc.pkl"
+    # === Load our pretrained model and normalization stats ===
+    model_path = "../humanoid_run_upd.zip"
+    normalize_path = "../upd_humanoid_runner_vecnormalize_subproc.pkl"
 
     try:
         model = SAC.load(model_path, env=vec_env)
@@ -158,7 +158,7 @@ if __name__ == "__main__":
         print("\nTraining interrupted. Saving current model...")
 
     # === Save the updated model and VecNormalize files with new names in the same directory ===
-    updated_model_filename = "./2upd_humanoid_runner_sac_subproc.zip"
+    updated_model_filename = "./humanoid_run_upd2.zip"
     updated_normalize_filename = "./2upd_humanoid_runner_vecnormalize_subproc.pkl"
 
     model.save(updated_model_filename)

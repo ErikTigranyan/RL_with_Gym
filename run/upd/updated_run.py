@@ -73,7 +73,7 @@ if __name__ == "__main__":
     vec_env = SubprocVecEnv(env_fns)
     vec_env = VecNormalize(vec_env, norm_obs=True, norm_reward=True)
 
-    # === Load your pretrained model and normalization stats ===
+    # === Load our pretrained model and normalization stats ===
     model_path = "../humanoid_run.zip"
     normalize_path = "../humanoid_runner_vecnormalize_subproc.pkl"
 

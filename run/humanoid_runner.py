@@ -59,7 +59,7 @@ if __name__ == "__main__":
     # === Initialize model ===
     model = SAC("MlpPolicy", vec_env, verbose=1, tensorboard_log="runner_training_logs/", learning_rate=3e-4)
 
-    # === Load pretrained model if needed ===
+    # === Load pretrained model ===
     try:
         model = SAC.load("../walk/humanoid_walk.zip", env=vec_env)
         print("Pretrained model loaded.")
