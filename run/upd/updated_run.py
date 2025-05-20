@@ -75,7 +75,7 @@ if __name__ == "__main__":
 
     # === Load your pretrained model and normalization stats ===
     model_path = "../humanoid_run.zip"
-    normalize_path = "../humanoid_runner_vecnormalize_subproc_new.pkl"
+    normalize_path = "../humanoid_runner_vecnormalize_subproc.pkl"
 
     try:
         model = SAC.load(model_path, env=vec_env)
